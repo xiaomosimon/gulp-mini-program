@@ -1,0 +1,1 @@
+"use strict";var formatTime=function(t){var e=t.getFullYear(),r=t.getMonth()+1,o=t.getDate(),a=t.getHours(),m=t.getMinutes(),t=t.getSeconds();return"".concat([e,r,o].map(formatNumber).join("/")," ").concat([a,m,t].map(formatNumber).join(":"))},formatNumber=function(t){return(t=t.toString())[1]?t:"0".concat(t)};module.exports={formatTime:formatTime};

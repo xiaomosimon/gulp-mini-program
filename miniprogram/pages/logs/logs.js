@@ -1,0 +1,1 @@
+"use strict";var util=require("../../utils/util.js");Page({data:{logs:[]},onLoad:function(){this.setData({logs:(wx.getStorageSync("logs")||[]).map(function(t){return{date:util.formatTime(new Date(t)),timeStamp:t}})})}});

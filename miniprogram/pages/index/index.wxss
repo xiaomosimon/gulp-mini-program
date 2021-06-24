@@ -1,0 +1,1 @@
+.userinfo{-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-box-align:center;-ms-flex-align:center;align-items:center;color:#aaa;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}.userinfo-avatar{border-radius:50%;height:128rpx;margin:20rpx;overflow:hidden;width:128rpx}.usermotto{margin-top:200px}

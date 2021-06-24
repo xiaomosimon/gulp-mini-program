@@ -1,0 +1,1 @@
+.simon{color:red;height:100vh;width:2rpx}.simon:after{-webkit-transform:translate(10%,10%);transform:translate(10%,10%)}

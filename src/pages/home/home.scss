@@ -1,0 +1,10 @@
+$color: red;
+
+.simon {
+  color: $color;
+  width: 2rpx;
+  height: 100vh;
+  &::after {
+    transform: translate(10%, 10%);
+  }
+}
