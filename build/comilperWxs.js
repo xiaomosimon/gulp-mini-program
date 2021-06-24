@@ -14,7 +14,7 @@ const {
   outputRoot,
   wxsRoot,
   parseArgs
-} = require('./commonConfig');
+} = require('./config');
 const mode = parseArgs.mode;
 let entry = entryRoot + wxsRoot + '/*.js';
 

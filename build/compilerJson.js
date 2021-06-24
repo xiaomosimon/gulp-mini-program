@@ -6,13 +6,12 @@ const {
 const jsonminify = require('gulp-jsonminify');
 
 const {
-  entryRoot,
-  outputRoot
-} = require('./commonConfig');
-let entry = entryRoot + '**/*.json';
+  outputRoot,
+  jsonConfig
+} = require('./config');
 
 function compilerHtml() {
-  return src(entry, {
+  return src(jsonConfig.entry, {
       since: lastRun(compilerHtml)
     })
     .pipe(jsonminify())

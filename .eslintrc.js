@@ -6,13 +6,14 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   parserOptions: {
-    ecmaVersion: 2015
+    sourceType: 'module',
+    ecmaVersion: 6
   },
   rules: {
-    indent: ['error', 2],
-    quotes: ['error', 'single'],
-    // semi: ['error', 'always'],
-    // 'no-console': 1
+    indent: ['error', 2], // 缩进
+    quotes: ['error', 'single'], // 单引号
+    // semi: ['error', 'always'], // 尾分号
+    // 'no-console': 1, // console
   },
   globals: {
     getApp: false,

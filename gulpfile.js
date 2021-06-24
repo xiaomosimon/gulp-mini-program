@@ -7,7 +7,7 @@ const del = require('del');
 const {
   entryRoot,
   outputRoot
-} = require('./build/commonConfig');
+} = require('./build/config');
 // 截取后缀名
 const getExtThroughFilePath = function (filePath) {
   return /[^\.]\w*$/g.exec(filePath)[0];
@@ -38,7 +38,6 @@ const addWorkFiles = require('./build/addWorkFiles');
 // 监控
 exports.dev = function watchTask() {
   log(chalk.green(`监控启动`));
-
   const watcher = watch("src/**/**"); // 默认add change unlink
   const isImageTypeThroughExt = function (ext) {
     return ['png', 'jpg', 'jpeg', 'svg', 'gif'].includes(ext);
@@ -69,7 +68,7 @@ exports.dev = function watchTask() {
     const ext = getExtThroughFilePath(filePath);
     return runTaskThroughFileChange(ext);;
   });
-  
+
   watcher.on("change", function (filePath) {
     log(chalk.blue(`修改文件： ———————— ${filePath} —————————— `));
     const ext = getExtThroughFilePath(filePath);

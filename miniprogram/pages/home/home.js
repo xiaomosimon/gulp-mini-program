@@ -1,1 +1,0 @@
-"use strict";Page({onLoad:function(){this.testPromise()},test:function(){console.log(11),this.testPromise(),console.log(2)},testPromise:function(){return new Promise(function(o){console.log(3),o()})}});

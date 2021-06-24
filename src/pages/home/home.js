@@ -1,9 +1,12 @@
+import wxbarcode from 'wxbarcode';
+const app = getApp();
 Page({
   onLoad() {
-    this.testPromise()
+    this.test()
   },
   test() {
-    console.log(11);
+    app.globalData.userInfo = {}
+    wxbarcode.qrcode('qrcode', '1234567890123456789', 400, 400)
     this.testPromise();
     console.log(2);
   },

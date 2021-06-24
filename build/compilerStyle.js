@@ -10,13 +10,12 @@ const sass = require('gulp-dart-sass');
 const rename = require('gulp-rename');
 
 const {
-  entryRoot,
+  styleConfig,
   outputRoot
-} = require('./commonConfig');
-let entry = entryRoot + '**/*.scss';
+} = require('./config');
 
 function compilerStyle() {
-  return src(entry, {
+  return src(styleConfig.entry, {
       since: lastRun(compilerStyle)
     })
     .pipe(sass().on('error', sass.logError))

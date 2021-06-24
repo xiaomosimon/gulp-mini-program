@@ -4,7 +4,7 @@
   "description": "gulp-mini-program",
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp build -mode production"
+    "build": "gulp build --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -17,6 +17,7 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
+    "gulp-copy": "^4.0.1",
     "gulp-dart-sass": "^1.0.2",
     "gulp-eslint": "^6.0.0",
     "gulp-htmlmin": "^5.0.1",
@@ -34,6 +35,6 @@
     "@babel/runtime": "^7.14.6"
   },
   "keywords": [],
-  "author": "",
+  "author": "xiaomo_Simon",
   "license": "ISC"
 }

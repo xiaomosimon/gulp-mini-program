@@ -8,16 +8,15 @@ const {
   entryRoot,
   imagesRoot,
   outputRoot
-} = require('./commonConfig');
+} = require('./config');
 // 入口
 let entry = entryRoot + imagesRoot;
 // const extNames = '*.{png,jpg,jpeg,svg,gif}';
 entry += (/[^\/]$/.test(entry) ? '/*' : '*');
 // 出口
 const output = outputRoot + imagesRoot;
-console.log(entry, output);
 function imagesTask() {
-  return src('src/assets/images/*', {
+  return src(entry, {
     since: lastRun(imagesTask)
   })
     .pipe(
@@ -28,6 +27,6 @@ function imagesTask() {
         }]
       })
     )
-    .pipe(dest('miniprogram/assets/images'))
+    .pipe(dest(output))
 }
 module.exports = imagesTask;

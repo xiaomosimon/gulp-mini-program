@@ -15,7 +15,7 @@ const rename = require('gulp-rename');
 const {
   entryRoot,
   parseArgs
-} = require('./commonConfig');
+} = require('./config');
 const {
   t,
   n

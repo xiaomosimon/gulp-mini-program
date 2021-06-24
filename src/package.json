@@ -1,0 +1,11 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "微信小程序构建npm",
+  "keywords": [],
+  "author": "xiaomo_Simon",
+  "license": "ISC",
+  "dependencies": {
+    "wxbarcode": "^1.0.2"
+  }
+}

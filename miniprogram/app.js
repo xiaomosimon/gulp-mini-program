@@ -1,1 +1,0 @@
-"use strict";App({onLaunch:function(){var n=wx.getStorageSync("logs")||[];n.unshift(Date.now()),wx.setStorageSync("logs",n),wx.login({success:function(n){console.log(n)}})},globalData:{userInfo:null}});

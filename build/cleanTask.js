@@ -4,7 +4,7 @@ const {
 const gulpClean = require('gulp-clean');
 const {
   outputRoot
-} = require('./commonConfig');
+} = require('./config');
 
 function cleanTask() {
   return src(outputRoot, {

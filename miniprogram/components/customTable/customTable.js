@@ -1,1 +1,0 @@
-"use strict";Component({behaviors:[],properties:{},data:{},created:function(){},attached:function(){},ready:function(){},moved:function(){},detached:function(){},methods:{}});

@@ -1,1 +1,0 @@
-"use strict";Page({data:{},onLoad:function(){},onReady:function(){},onShow:function(){},onPullDownRefresh:function(){},onReachBottom:function(){},onShareAppMessage:function(){},onPageScroll:function(){}});
