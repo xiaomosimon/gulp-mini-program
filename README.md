@@ -32,13 +32,13 @@ $ npm install --global gulp-cli
 使用如下:
 ```
 # 新建page或component
-# 命令需要带 t 和 n 参数  (type 和 name)
+# 命令需要带 p 或 c 参数  (page或component)
 
 # 在入口根目录下的components目录下添加mine组件文件夹
-$ gulp add -t c -n mine
+$ gulp add -c mine
 
 # 在入口根目录下的pages目录下添加mine组件文件夹
-$ gulp add -t p -n mine
+$ gulp add -p mine
 ```
 
 ### 其他
@@ -80,8 +80,9 @@ $ gulp build -mode development -custom hellWord
 
 ## 问题
 
-1. 如何优雅支持es6+语法并转化为es5；
-2. 如何进行第三方库的打包并能使小程序正常运行，例如moment.js lodash.js等工具库；
+1. 如何优雅支持新es6+语法并转化为es5；
+2. Q:如何进行第三方库的打包并能使小程序正常运行，例如moment.js lodash.js等工具库；
+   A:当前已以 使用第三方包并使用开发工具构建npm 方式解决引入第三方库的使用
 3. 如何支持wxs使用es6语法被babel转化后还能使小程序正常运行；eg:
 ```js
 let a = 1000;

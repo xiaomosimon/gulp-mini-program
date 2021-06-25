@@ -40,5 +40,5 @@ config.jsonConfig.entry = backFilesEntry(config.jsonConfig);
 config.wxmlConfig.entry = backFilesEntry(config.wxmlConfig);
 config.styleConfig.entry = backFilesEntry(config.styleConfig);
 config.copyConfig.entry = backFilesEntry(config.copyConfig);
-console.log(config);
+
 module.exports = config;

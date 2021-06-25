@@ -1,9 +1,9 @@
 /**
  * 进行template添加 component page
- * 命令需要带 t 和 n 参数  (type 和 name)
- * eg: gulp add -t c -n mine
+ * 命令需要带 c 或 p 参数  (component 和 page)
+ * eg: gulp add -c mine
  * 在入口根目录下的components目录下添加mine组件文件夹
- * eg: gulp add -t p -n mine
+ * eg: gulp add -p mine
  * 在入口根目录下的pages目录下添加mine组件文件夹
  */
 const {
@@ -17,28 +17,27 @@ const {
   parseArgs
 } = require('./config');
 const {
-  t,
-  n
+  c,
+  p
 } = parseArgs;
 let entry = '.template';
-let ouput = entryRoot
-switch (t) {
-  case 'c':
-    entry += '/component/*';
-    ouput += `components/${n}/`
-    break;
-  case 'p':
-    entry += '/page/*';
-    ouput += `pages/${n}/`
-    break;
-  default:
-    entry = '';
-    break;
+let ouput = entryRoot;
+let name = ''
+if (c) {
+  entry += '/component/*';
+  name = c;
+  ouput += `components/${name}/`;
+} else if (p) {
+  entry += '/page/*';
+  name = p;
+  ouput += `pages/${name}/`
+} else {
+  entry = '';
 }
 function addWorkFiles() {
   return src(entry)
     .pipe(rename({
-      basename: n
+      basename: name
     }))
     .pipe(dest(ouput))
 }
