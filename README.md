@@ -2,6 +2,8 @@
 微信小程序使用gulp
 
 ## 初始化
+首先在project.config.json文件里配置自己的appid
+
 ```
 $ npm install
 ```
@@ -9,11 +11,14 @@ $ npm install
 ## 用法
 
 ### 基本
+
 ```
 # 开发模式，进行新增，修改，删除，自动构建对应的文件到输出目录
+# 请在project.config.json文件里配置miniprogramRoot值为【开发时的小程序根目录】
 $ npm run dev
 
 # 生产模式，进行构建打包
+# 请上传版本的时候在project.config.json文件里配置miniprogramRoot值为【打包后的小程序根目录】
 $ npm run build
 
 ```
@@ -60,11 +65,13 @@ $ gulp build -mode development -custom hellWord
 
 ## 功能
 
+- 可兼容微信开发平台构建npm（暂时解决无法使用第三方库问题）
 - 可使用sass，自动转化为wxss到打包后对应文件夹下
 - babel转化js并压缩
 - 压缩image
 - 压缩json
 - 压缩wxml
+- 热更新
 - 自动赋值静态文件到打包后对应文件夹下（可配置）
 - eslint构建时校验（可配置）
 - 打包前清空指定目录（默认输出目录）
@@ -89,13 +96,20 @@ var a = 1e3;
 
 2. 我想一边使用这个架子做一个小程序，一边去优化这个架子，并邀请志友参与此项目的优化和改进，并通过此达到学习的目的，欢迎您的pr。
 
+3. 正在梳理编写流程，将具体的实现和思考流程放在各社区，方便大家进行自定义配置和使用。
+
 
 我是小墨_Simon，感谢您阅读到最后，我们一起加油！
 
 也欢迎您关注我：
-微信：xiaomo_Simon
+
 邮箱：xiaomosimon@gmail.com
 
-我的公众号（建设中）
+微信
 
-![公众号二维码](https://raw.githubusercontent.com/xiaomosimon/xiaomosimon.github.io/master/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7.jpg)
+![小墨_Simon微信号二维码](https://raw.githubusercontent.com/xiaomosimon/xiaomosimon.github.io/master/%E5%BE%AE%E4%BF%A1%E5%8F%B7.jpg)
+
+
+公众号（建设中）
+
+![小墨_Simon公众号二维码](https://raw.githubusercontent.com/xiaomosimon/xiaomosimon.github.io/master/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7.jpg)

@@ -41,7 +41,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.17.3",
-  "appid": "wx877020208217a35d",
+  "appid": "",
   "projectname": "gulp-mini-program",
   "debugOptions": {
     "hidedInDevtools": []
