@@ -3,7 +3,6 @@ const parseArgs = require('minimist')(process.argv.slice(2));
 const {
   backFilesEntry
 } = require('./util');
-
 let config = {
   entryRoot: 'src/',
   outputRoot: 'miniprogram/',
@@ -31,8 +30,8 @@ let config = {
   },
   parseArgs: {
     mode: 'development', // 默认为 development 模式
-    ...parseArgs,
-  } // { _: [ 'build' ], mode: 'development' }
+    ...parseArgs, // { _: [ 'build' ], mode: 'development' }
+  }
 };
 
 config.jsConfig.entry = backFilesEntry(config.jsConfig);

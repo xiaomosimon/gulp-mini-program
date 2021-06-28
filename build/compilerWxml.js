@@ -24,6 +24,6 @@ function compilerWxml() {
       removeComments: true, // 	删除HTML注释
       collapseWhitespace: true, // 压缩HTML
     }))
-    .pipe(dest(outputRoot))
+    .pipe(dest(outputRoot));
 }
 module.exports = compilerWxml;

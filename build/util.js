@@ -15,7 +15,7 @@ function backHandledExclude(exclude) {
   if (exclude instanceof Array) {
     return exclude.map((v) => {
       return `!${v}`;
-    })
+    });
   }
   let excludeArr = [];
   if (typeof exclude === 'string') {
@@ -28,11 +28,11 @@ function backFilesEntry({
   include = [],
   exclude = []
 }) {
-  return [...backHandledInclude(include), ...backHandledExclude(exclude)]
+  return [...backHandledInclude(include), ...backHandledExclude(exclude)];
 }
 
 module.exports = {
   backHandledInclude,
   backHandledExclude,
   backFilesEntry
-}
+};

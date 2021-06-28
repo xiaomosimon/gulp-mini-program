@@ -15,10 +15,11 @@ let entry = entryRoot + imagesRoot;
 entry += (/[^\/]$/.test(entry) ? '/*' : '*');
 // 出口
 const output = outputRoot + imagesRoot;
+
 function imagesTask() {
   return src(entry, {
-    since: lastRun(imagesTask)
-  })
+      since: lastRun(imagesTask)
+    })
     .pipe(
       imagemin({
         progressive: true,
@@ -27,6 +28,6 @@ function imagesTask() {
         }]
       })
     )
-    .pipe(dest(output))
+    .pipe(dest(output));
 }
 module.exports = imagesTask;

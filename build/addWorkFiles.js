@@ -20,9 +20,9 @@ const {
   c,
   p
 } = parseArgs;
-let entry = '.template';
+let entry = '_template';
 let ouput = entryRoot;
-let name = ''
+let name = '';
 if (c) {
   entry += '/component/*';
   name = c;
@@ -30,7 +30,7 @@ if (c) {
 } else if (p) {
   entry += '/page/*';
   name = p;
-  ouput += `pages/${name}/`
+  ouput += `pages/${name}/`;
 } else {
   entry = '';
 }
@@ -39,7 +39,7 @@ function addWorkFiles() {
     .pipe(rename({
       basename: name
     }))
-    .pipe(dest(ouput))
+    .pipe(dest(ouput));
 }
 
 module.exports = addWorkFiles;

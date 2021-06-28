@@ -15,6 +15,7 @@ const {
 } = require('./config');
 const mode = parseArgs.mode; // isBuild
 const isProduction = mode === 'production';
+
 function compilerJs() {
   return src(jsConfig.entry, {
       since: lastRun(compilerJs)
@@ -30,4 +31,4 @@ function compilerJs() {
     .pipe(dest(outputRoot));
 }
 
-module.exports = compilerJs
+module.exports = compilerJs;

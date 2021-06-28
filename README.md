@@ -76,6 +76,7 @@ $ gulp build -mode development -custom hellWord
 - eslint构建时校验（可配置）
 - 打包前清空指定目录（默认输出目录）
 - 新建page或component模板
+- git commit之前eslint检测（可配置）
 
 
 ## 问题

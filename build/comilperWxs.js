@@ -33,4 +33,4 @@ function compilerWxs() {
     .pipe(dest(outputRoot));
 }
 
-module.exports = compilerWxs
+module.exports = compilerWxs;

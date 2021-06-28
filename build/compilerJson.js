@@ -15,6 +15,6 @@ function compilerHtml() {
       since: lastRun(compilerHtml)
     })
     .pipe(jsonminify())
-    .pipe(dest(outputRoot))
+    .pipe(dest(outputRoot));
 }
 module.exports = compilerHtml;

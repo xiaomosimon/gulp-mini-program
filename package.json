@@ -4,7 +4,8 @@
   "description": "gulp-mini-program",
   "scripts": {
     "dev": "gulp dev",
-    "build": "gulp build --mode production"
+    "build": "gulp build --mode production",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
@@ -29,13 +30,19 @@
     "gulp-replace": "^1.1.3",
     "gulp-strip-debug": "^4.0.0",
     "gulp-uglify": "^3.0.2",
+    "lint-staged": "^11.0.0",
     "minimist": "^1.2.5",
-    "postcss": "^8.3.5"
+    "postcss": "^8.3.5",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.6"
   },
   "keywords": [],
   "author": "xiaomo_Simon",
-  "license": "ISC"
+  "license": "ISC",
+  "pre-commit": "lint-staged",
+  "lint-staged": {
+    "src/**/*.js": "eslint"
+  }
 }

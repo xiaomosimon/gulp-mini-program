@@ -36,5 +36,4 @@ function compilerStyle() {
     }))
     .pipe(dest(outputRoot));
 }
-// ^@import\s*["|'][^"|']+["|'];?
 module.exports = compilerStyle;
