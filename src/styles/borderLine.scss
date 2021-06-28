@@ -1,0 +1,79 @@
+$lineColor: red;
+
+.line-t-1{
+  position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1rpx solid $lineColor;
+    color: $lineColor;
+    transform-origin: 0 0;
+    transform: scaleY(.5);
+  }
+}
+.line-b-1{
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1rpx solid $lineColor;
+    color: $lineColor;
+    transform-origin: 0 100%;
+    transform: scaleY(.5);
+  }
+}
+.line-l-1{
+  position: relative;
+  &:before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 1px;
+    border-left: 1rpx solid $lineColor;
+    color: $lineColor;
+    transform-origin: 0 0;
+    transform: scaleX(.5);
+  }
+}
+.line-r-1{
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 1px;
+    border-right: 1rpx solid $lineColor;
+    color: $lineColor;
+    transform-origin: 100% 100%;
+    transform: scaleX(.5);
+  }
+}
+
+.line-all-1{
+  position: relative;
+  &:after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 1px;
+    border: 1px solid $lineColor;
+    color: $lineColor;
+    height: 200%;
+    transform-origin: left top;
+    transform: scale(.5);
+  }
+}
