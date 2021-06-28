@@ -1,5 +1,5 @@
 // logs.js
-const util = require('../../utils/util.js')
+const util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -11,8 +11,8 @@ Page({
         return {
           date: util.formatTime(new Date(log)),
           timeStamp: log
-        }
+        };
       })
-    })
+    });
   }
-})
+});

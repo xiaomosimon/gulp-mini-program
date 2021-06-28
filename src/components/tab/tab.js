@@ -13,4 +13,4 @@ Component({
 
   methods: {}
 
-})
+});

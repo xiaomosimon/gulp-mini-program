@@ -12,8 +12,8 @@ module.exports = {
   rules: {
     indent: ['error', 2], // 缩进
     quotes: ['error', 'single'], // 单引号
-    // semi: ['error', 'always'], // 尾分号
-    // 'no-console': 1, // console
+    semi: ['error', 'always'], // 尾分号
+    'no-console': 1, // console
   },
   globals: {
     getApp: false,
