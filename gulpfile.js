@@ -21,7 +21,7 @@ const cleanTask = require('./build/cleanTask');
 // 编译js
 const compilerJs = require('./build/compilerJs');
 // 编译sass，转化css，生成wxss
-const compilerStyle = require('./build/compilerStyle');
+const compilerWxss = require('./build/compilerWxss');
 // 压缩json
 const compilerJson = require('./build/compilerJson')
 // 压缩html
@@ -50,7 +50,7 @@ exports.dev = function watchTask() {
       return compilerJs();
     }
     if (ext === 'scss') {
-      return compilerStyle();
+      return compilerWxss();
     }
     if (ext === 'json') {
       return compilerJson();
@@ -97,7 +97,7 @@ exports.dev = function watchTask() {
 // 构建打包
 function compile() {
   log(chalk.green(`正在构建...`));
-  return series(cleanTask, parallel(compilerStyle, compilerJson, compilerWxml, imagesTask, copyTask), compilerJs);
+  return series(cleanTask, parallel(compilerWxss, compilerJson, compilerWxml, imagesTask, copyTask), compilerJs);
 }
 exports.build = compile();
 // 添加page或component模板

@@ -58,7 +58,7 @@ $ gulp build -mode development -custom hellWord
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build --mode production",
-    "test": "gulp dev --mode test --test hello"
+    "test": "gulp dev --mode test --custom hellWord"
   }
 }
 ```
@@ -89,7 +89,6 @@ let a = 1000;
 // --> 转化为如下代码，但是小程序不支持
 var a = 1e3;
 ```
-4. 如何获取大家的关注一起学习，优化这个"孩子"呢？
 
 
 ## 希望
