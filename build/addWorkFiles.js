@@ -34,12 +34,14 @@ if (c) {
 } else {
   entry = '';
 }
-function addWorkFiles() {
-  return src(entry)
+
+function addWorkFiles(cb) {
+  src(entry)
     .pipe(rename({
       basename: name
     }))
     .pipe(dest(ouput));
+  cb();
 }
 
 module.exports = addWorkFiles;
