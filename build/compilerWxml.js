@@ -1,7 +1,6 @@
 const {
   src,
-  dest,
-  lastRun
+  dest
 } = require('gulp');
 /**
  * html-minifier options documentation
@@ -15,9 +14,7 @@ const {
 } = require('./config');
 
 function compilerWxml() {
-  return src(wxmlConfig.entry, {
-      since: lastRun(compilerWxml)
-    })
+  return src(wxmlConfig.entry)
     .pipe(htmlmin({
       keepClosingSlash: true, // 保持单标签的尾部斜杠
       caseSensitive: true, //  大小写敏感

@@ -1,7 +1,6 @@
 const {
   src,
-  dest,
-  lastRun
+  dest
 } = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
@@ -17,9 +16,7 @@ const mode = parseArgs.mode; // isBuild
 const isProduction = mode === 'production';
 
 function compilerJs() {
-  return src(jsConfig.entry, {
-      since: lastRun(compilerJs)
-    })
+  return src(jsConfig.entry)
     .pipe(gulpIf(isProduction, eslint()))
     .pipe(gulpIf(isProduction, eslint.format()))
     .pipe(gulpIf(isProduction, eslint.failAfterError()))

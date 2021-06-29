@@ -1,7 +1,6 @@
 const {
   src,
-  dest,
-  lastRun
+  dest
 } = require('gulp');
 const jsonminify = require('gulp-jsonminify');
 
@@ -10,11 +9,9 @@ const {
   jsonConfig
 } = require('./config');
 
-function compilerHtml() {
-  return src(jsonConfig.entry, {
-      since: lastRun(compilerHtml)
-    })
+function compilerJson() {
+  return src(jsonConfig.entry)
     .pipe(jsonminify())
     .pipe(dest(outputRoot));
 }
-module.exports = compilerHtml;
+module.exports = compilerJson;

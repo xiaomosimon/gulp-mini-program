@@ -36,7 +36,7 @@ const imagesTask = require('./build/imagesTask');
 const addWorkFiles = require('./build/addWorkFiles');
 
 // 监控
-function watchTask(cb) {
+function watchTask() {
   log(chalk.green(`生成小程序开发目录: ${outputRoot}`));
   log(chalk.green(`监控任务启动`));
   const watcher = watch("src/**/**"); // 默认add change unlink
@@ -93,7 +93,6 @@ function watchTask(cb) {
     del([file]);
     log(chalk.green(`删除文件夹： ———————— ${filePath} —————————— success`));
   });
-  cb();
 }
 
 // 执行更新需生成小程序目录
@@ -103,5 +102,4 @@ exports.dev = series(series(cleanTask, parallel(compilerWxss, compilerJson, comp
 exports.build = series(cleanTask, parallel(compilerWxss, compilerJson, compilerWxml, copyTask, imagesTask), compilerJs);
 
 // 添加page或component模板
-// TODO Q:单使用addWorkFiles无法被watch监听到
 exports.add = addWorkFiles;

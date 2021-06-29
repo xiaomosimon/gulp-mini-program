@@ -1,7 +1,6 @@
 const {
   src,
-  dest,
-  lastRun
+  dest
 } = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
@@ -19,9 +18,7 @@ const mode = parseArgs.mode;
 let entry = entryRoot + wxsRoot + '/*.js';
 
 function compilerWxs() {
-  return src(entry, {
-      since: lastRun(compilerWxs)
-    })
+  return src(entry)
     .pipe(babel({
       presets: ['@babel/env']
     }))

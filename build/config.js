@@ -20,7 +20,7 @@ let config = {
     include: ['src/**/*.wxml'],
     exclude: ['src/{node_modules,miniprogram_npm}/**/*.wxml']
   },
-  styleConfig: {
+  wxssConfig: {
     include: ['src/**/*.scss'],
     exclude: ['src/{node_modules,miniprogram_npm}/**/*.scss']
   },
@@ -37,7 +37,7 @@ let config = {
 config.jsConfig.entry = backFilesEntry(config.jsConfig);
 config.jsonConfig.entry = backFilesEntry(config.jsonConfig);
 config.wxmlConfig.entry = backFilesEntry(config.wxmlConfig);
-config.styleConfig.entry = backFilesEntry(config.styleConfig);
+config.wxssConfig.entry = backFilesEntry(config.wxssConfig);
 config.copyConfig.entry = backFilesEntry(config.copyConfig);
 
 module.exports = config;
