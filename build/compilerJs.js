@@ -12,18 +12,16 @@ const {
   outputRoot,
   parseArgs,
 } = require('./config');
-const mode = parseArgs.mode; // isBuild
-const isProduction = mode === 'production';
-
-function compilerJs() {
+const { mode, server } = parseArgs;
+const isProduction = mode === 'production'; // isBuild
+const notServer = !server;  // isServer
+function compilerJs () {
   return src(jsConfig.entry)
     .pipe(gulpIf(isProduction, eslint()))
     .pipe(gulpIf(isProduction, eslint.format()))
     .pipe(gulpIf(isProduction, eslint.failAfterError()))
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(uglify())
+    .pipe(gulpIf(notServer, babel()))
+    .pipe(gulpIf(notServer, uglify()))
     .pipe(gulpIf(isProduction, stripDebug()))
     .pipe(dest(outputRoot));
 }

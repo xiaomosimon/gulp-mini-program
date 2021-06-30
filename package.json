@@ -4,17 +4,19 @@
   "description": "gulp-mini-program",
   "scripts": {
     "dev": "gulp dev",
+    "server": "gulp server --server true",
     "build": "gulp build --mode production",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.14.7",
     "autoprefixer": "^10.2.6",
     "chalk": "^4.1.1",
     "cssnano": "^5.0.6",
     "del": "^6.0.0",
-    "eslint": "^7.29.0",
+    "eslint": "^7.30.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
@@ -34,9 +36,6 @@
     "minimist": "^1.2.5",
     "postcss": "^8.3.5",
     "pre-commit": "^1.2.2"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.14.6"
   },
   "keywords": [],
   "author": "xiaomo_Simon",

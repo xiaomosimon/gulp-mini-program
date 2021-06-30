@@ -94,8 +94,10 @@ function watchTask() {
     log(chalk.green(`删除文件夹： ———————— ${filePath} —————————— success`));
   });
 }
+// 热更新模式： 执行更新需生成小程序目录
+exports.server = series(series(cleanTask, parallel(compilerWxss, compilerJson, compilerWxml, copyTask, imagesTask), compilerJs), watchTask);
 
-// 执行更新需生成小程序目录
+// 开发模式： 执行更新需生成小程序目录
 exports.dev = series(series(cleanTask, parallel(compilerWxss, compilerJson, compilerWxml, copyTask, imagesTask), compilerJs), watchTask);
 
 // 构建打包

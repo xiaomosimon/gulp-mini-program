@@ -17,6 +17,10 @@ $ npm install
 # 请在project.config.json文件里配置miniprogramRoot值为【开发时的小程序根目录】
 $ npm run dev
 
+# 热更新模式，进行新增，修改，删除，自动构建对应的文件到输出目录，不压缩js
+# 请在project.config.json文件里配置miniprogramRoot值为【开发时的小程序根目录】
+$ npm run server
+
 # 生产模式，进行构建打包
 # 请上传版本的时候在project.config.json文件里配置miniprogramRoot值为【打包后的小程序根目录】
 $ npm run build

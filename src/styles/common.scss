@@ -1,7 +1,9 @@
-.flex {
-  display: flex;
+// overflow
+.overflow-hidden {
+  overflow: hidden;
 }
 
+// 元素类型
 .block {
   display: block;
 }
@@ -14,6 +16,21 @@
   display: inline-block;
 }
 
+// 元素显隐
+.visibility-visible {
+  visibility: visible;
+}
+
+.visibility-hidden {
+  visibility: hidden;
+}
+
+// 元素基线
+.vertical-align-top {
+  vertical-align: top;
+}
+
+// 内容排布
 .text-center {
   text-align: center;
 }
