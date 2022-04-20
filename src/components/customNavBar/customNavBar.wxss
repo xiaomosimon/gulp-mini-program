@@ -1,0 +1,48 @@
+/* components/customNavBar/customNavBar.wxss */
+.container {
+  width: 100%;
+  position: fixed;
+  z-index: 80;
+  /* 固定底部间距，不去使用获取的间距 */
+  padding-bottom: 16rpx;
+}
+
+.background-change-transition {
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+
+.back {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.back-margin-left {
+  margin-left: 20rpx;
+}
+
+.back__icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title__text {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: normal;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  white-space: break-all;
+  width: 340rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: 600;
+}
