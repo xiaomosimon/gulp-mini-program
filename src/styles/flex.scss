@@ -71,6 +71,10 @@
   &-around {
     justify-content: space-around;
   }
+
+  &-evenly {
+    justify-content: space-evenly;
+  }
 }
 
 .align {
@@ -116,6 +120,10 @@
 
   &-stretch {
     align-content: stretch;
+  }
+
+  &-evenly {
+    align-content: space-evenly;
   }
 
   &-self-auto {

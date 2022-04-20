@@ -1,0 +1,21 @@
+<!--components/customNavBar/customNavBar.wxml-->
+<view class="container {{transition ? 'background-change-transition': ''}}" style="padding-top:{{navBarTop}}px;{{backgroundColor ? 'background-color:' + backgroundColor + ';' : ''}}">
+	<view class="wrapper" style="top:{{navBarTop}}px;">
+		<view wx:if="{{showBack}}" class="back" style="height:{{navBarHeight}}px;" bindtap="onBack">
+			<!-- 可自定义左侧图标 -->
+			<slot name="backIcon"></slot>
+			<block wx:if="{{!slotBackIcon}}">
+				<view wx:if="{{backTitle}}" class="back-margin-left" style="{{backTitleStyle}}">{{backTitle}}</view>
+				<!-- back icon 暂只支持白色和黑色 -->
+				<image wx:elif="{{backIconColor === 'white'}}" class="back__icon back-margin-left" src="../../assets/images/icon-left-white.png">
+				</image>
+				<image wx:else class="back__icon back-margin-left" src="../../assets/images/icon-left-black.png"></image>
+			</block>
+		</view>
+		<view wx:if="{{title}}" class="title" style="height:{{navBarHeight}}px;{{titleStyle}}">
+			<text class="title__text">{{title}}</text>
+		</view>
+		<slot name="back"></slot>
+		<slot name="title"></slot>
+	</view>
+</view>

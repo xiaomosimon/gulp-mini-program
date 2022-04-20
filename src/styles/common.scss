@@ -1,3 +1,8 @@
+view,
+text {
+  box-sizing: border-box;
+}
+
 // overflow
 .overflow-hidden {
   overflow: hidden;
@@ -17,6 +22,10 @@
 }
 
 // 元素显隐
+.none {
+  display: none;
+}
+
 .visibility-visible {
   visibility: visible;
 }
@@ -41,4 +50,20 @@
 
 .text-right {
   text-align: right;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-full {
+  width: 100vw;
+}
+
+.h-full {
+  height: 100vh;
 }

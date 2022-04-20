@@ -1,0 +1,104 @@
+var _weekChineseKeys = ['日', '一', '二', '三', '四', '五', '六'];
+
+/**
+ * @summary 整数补零
+ * @param {int} num 
+ * @param {number} digits 位数 默认为2位
+ */
+function zeroPadding(num, digits = 2) {
+  if (typeof num !== 'number') {
+    return num;
+  }
+  if (num <= Math.pow(10, digits - 1)) {
+    var str = (num + '');
+    var difference = digits - (num + '').length;
+    for (var i = 0; i < difference; i++) {
+      str = '0' + str;
+    }
+    return str;
+  }
+  return num;
+}
+
+/**
+ * @summary 判断获取Date对象
+ * @param {*} date
+ * @returns {Date} _date
+ */
+var backDate = function (date) {
+  var _date;
+  var dataType = typeof date;
+  if (!date) {
+    _date = getDate();
+  } else if (dataType === 'string') {
+    var spacerReg = getRegExp("[.|-]", "g");
+    date = date.replace(spacerReg, '/');
+    if (date.split('/').length === 2) {
+      date = date + '/01';
+    }
+    _date = getDate(date);
+  } else if (dataType === 'number') {
+    _date = getDate(date);
+  } else {
+    _date = date;
+  }
+  return _date;
+};
+
+/**
+ * @summary 获取Date对象可获取的所有信息(年月日等)
+ * @param {*} date 
+ * @returns {object}
+ */
+var getDateInfos = function (date) {
+  var _date = backDate(date);
+  var year = _date.getFullYear();
+  var month = _date.getMonth() + 1;
+  var day = _date.getDate();
+  var hour = _date.getHours();
+  var minute = _date.getMinutes();
+  var second = _date.getSeconds();
+  var week = _date.getDay();
+  var weekInChina = week === 0 ? 7 : week;
+  var weekCN = _weekChineseKeys[week];
+  return {
+    year: year,
+    month: month,
+    day: day,
+    hour: hour,
+    minute: minute,
+    second: second,
+    format: {
+      month: zeroPadding(month),
+      day: zeroPadding(day),
+      hour: zeroPadding(hour),
+      minute: zeroPadding(minute),
+      second: zeroPadding(second),
+    },
+    week: weekInChina,
+    weekCN: weekCN
+  };
+};
+
+// 返回直播预告时间
+var backLivePreviewDate = function (startTime, endTime) {
+  var _startDate = getDateInfos(startTime).format;
+  if (!endTime) {
+    return _startDate.month + '月' + _startDate.day + '日 ' + _startDate.hour + ':' + _startDate.minute;
+  }
+  var _endDate = getDateInfos(endTime).format;
+  var _startMonth = _startDate.month;
+  var _startDay = _startDate.day;
+  if (_startMonth === _endDate.month && _startDay === _endDate.day) {
+    return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.hour + ':' + _endDate.minute;
+  }
+  // 不是同一天
+  return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.month + '月' + _endDate.day + '日 ' + _endDate.hour + ':' + _endDate.minute;
+}
+
+
+module.exports = {
+  backDate: backDate,
+  getDateInfos: getDateInfos,
+  backLivePreviewDate: backLivePreviewDate
+};
