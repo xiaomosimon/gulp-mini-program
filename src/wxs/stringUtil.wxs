@@ -1,11 +1,11 @@
-var priceString = function (price) {
+var priceConvertToString = function (price) {
   if (price == null) {
     return "";
   }
   return (Math.round((price * 1000) / 10) / 100).toFixed(2);
 };
 
-var priceStringFromCent = function (price) {
+var priceConvertToStringWithDecimals = function (price) {
   if (price == null) {
     return "";
   }
@@ -13,6 +13,6 @@ var priceStringFromCent = function (price) {
 };
 
 module.exports = {
-  priceString: priceString,
-  priceStringFromCent: priceStringFromCent
+  priceConvertToString: priceConvertToString,
+  priceConvertToStringWithDecimals: priceConvertToStringWithDecimals,
 };

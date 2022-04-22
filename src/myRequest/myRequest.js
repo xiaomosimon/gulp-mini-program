@@ -18,7 +18,7 @@ const myRequest = function (configMethod) {
    * @returns {promise}
    *
    */
-  return function (url, options) {
+  return function (url, options = {}) {
     return new Promise((resolve, reject) => {
       const {
         method,

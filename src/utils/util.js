@@ -115,6 +115,48 @@ export function throttle(fn, interval) {
 }
 
 /**
+ * @summary 防抖
+ * @returns {string} uuid字符串
+ */
+export function debounce (func, wait, immediate, initValue) {
+  let timeout
+  let result = initValue
+
+  const later = function (context, args) {
+    timeout = null
+    if (args) {
+      result = func.apply(context, args)
+    }
+  }
+
+  const debounced = function (...args) {
+    if (timeout) {
+      clearTimeout(timeout)
+    }
+    if (immediate) {
+      const callNow = !timeout
+      timeout = setTimeout(later, wait)
+      if (callNow) {
+        result = func.apply(this, args)
+      }
+    } else {
+      timeout = setTimeout(() => {
+        later(this, args)
+      }, wait)
+    }
+
+    return result
+  }
+
+  debounced.cancel = function () {
+    clearTimeout(timeout)
+    timeout = null
+  }
+
+  return debounced
+}
+
+/**
  * @summary 深度替换值
  * @param {*} dataSource 数据源
  * @param {*} condition 全等条件值

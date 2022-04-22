@@ -1,4 +1,3 @@
-// components/customNavBar/customNavBar.js
 /**
  * 使用方式：
  * json文件引入,设置 "navigationStyle": "custom"
