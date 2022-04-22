@@ -1,4 +1,3 @@
-<!--components/customNavBar/customNavBar.wxml-->
 <view class="container {{transition ? 'background-change-transition': ''}}" style="padding-top:{{navBarTop}}px;{{backgroundColor ? 'background-color:' + backgroundColor + ';' : ''}}">
 	<view class="wrapper" style="top:{{navBarTop}}px;">
 		<view wx:if="{{showBack}}" class="back" style="height:{{navBarHeight}}px;" bindtap="onBack">

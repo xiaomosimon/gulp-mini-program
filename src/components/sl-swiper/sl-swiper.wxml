@@ -1,0 +1,12 @@
+<view class="swiper-wrapper w-100 {{className}}" style="{{customStyle}}">
+  <swiper class="w-100 h-100" circular autoplay interval="{{3000}}" bindchange="onSwiperChange">
+    <swiper-item wx:for="{{swiperList}}" wx:for-item="swiperItem" wx:key="uuid" bindtap="onNavigateTapped" data-path="{{swiperItem.bannerUrl}}" data-title="{{swiperItem.bannerTitle}}">
+      <image class="w-100 h-100" src="{{swiperItem.img.imgURL}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="swiper-dots-wrapper w-100">
+    <view class="pl-10" style="{{'width:' + (swiperList.length + 2) * 20  + 'rpx'}}">
+      <view class="swiper-dot {{swiperDotIndex === index ? 'swiper-dot-active' :''}}" wx:for="{{swiperList}}" wx:key="{{item.uuid + index}}" data-index="{{index}}"></view>
+    </view>
+  </view>
+</view>

@@ -96,9 +96,46 @@ var backLivePreviewDate = function (startTime, endTime) {
   return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.month + '月' + _endDate.day + '日 ' + _endDate.hour + ':' + _endDate.minute;
 }
 
+// 返回直播预告时间
+var backLivePreviewDate = function (startTime, endTime) {
+  var _startDate = getDateInfos(startTime).format;
+  if (!endTime) {
+    return _startDate.month + '月' + _startDate.day + '日 ' + _startDate.hour + ':' + _startDate.minute;
+  }
+  var _endDate = getDateInfos(endTime).format;
+  var _startMonth = _startDate.month;
+  var _startDay = _startDate.day;
+  if (_startMonth === _endDate.month && _startDay === _endDate.day) {
+    return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.hour + ':' + _endDate.minute;
+  }
+  // 不是同一天
+  return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.month + '月' + _endDate.day + '日 ' + _endDate.hour + ':' + _endDate.minute;
+}
+
+// 返回直播时间
+var backLiveDate = function (startTime, endTime) {
+  var _startDate = getDateInfos(startTime).format;
+  if (!endTime) {
+    return _startDate.month + '月' + _startDate.day + '日 ' + _startDate.hour + ':' + _startDate.minute;
+  }
+  var _endDate = getDateInfos(endTime).format;
+  var _startMonth = _startDate.month;
+  var _startDay = _startDate.day;
+  return _startMonth + '月' + _startDay + '日 ' + _startDate.hour + ':' + _startDate.minute + '-' + _endDate.hour + ':' + _endDate.minute;
+}
+
+// 返回笔记时间
+var backNoteDate = function (time) {
+  var date = getDateInfos(time);
+  var format = date.format;
+  return date.year + '年' + format.month + '月' + format.day + '日 ' + format.hour + ':' + format.minute;
+}
+
 
 module.exports = {
   backDate: backDate,
   getDateInfos: getDateInfos,
-  backLivePreviewDate: backLivePreviewDate
+  backLiveDate: backLiveDate,
+  backLivePreviewDate: backLivePreviewDate,
+  backNoteDate: backNoteDate
 };
